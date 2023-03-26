@@ -199,4 +199,4 @@ for_window [class="i3bar"] gaps outer current set 10
 exec --no-startup-id i3-msg 'workspace 1; exec $term; exec $term'
 
 # The rest is handled by startup script
-exec_always $HOME/scripts/startup.sh
+exec_always $HOME/scripts/startup_i3.sh

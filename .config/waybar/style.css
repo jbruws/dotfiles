@@ -1,0 +1,230 @@
+/*
+	This config is derived from
+	https://github.com/Pipshag/dotfiles_gruvbox/blob/master/.config/waybar/style.css
+*/
+
+@keyframes blink-warning {
+    70% {
+		background-color: @bg;
+    }
+
+    to {
+        background-color: @orange;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+	  background-color: @bg;
+    }
+
+    to {
+        background-color: @red;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Styles
+ * -------------------------------------------------------------------------- */
+
+/* COLORS */
+
+/* Gruvbox Dark */
+
+/* basic colors (from alacritty theme and polybar config) */
+@define-color black #282828;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color orange #fe8019;
+@define-color blue #458588;
+@define-color magenta #b16286;
+@define-color cyan #689d6a;
+@define-color white #a89984;
+
+@define-color bg #282828;
+@define-color bg-alt #3c3836;
+@define-color fg #fbf1c7;
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0px;
+    min-height: 0;
+    /*margin: 0.15em 0.25em 0.15em 0.25em;*/
+}
+
+/* The whole bar */
+#waybar {
+    background: @bg;
+    color: @fg;
+    font-family: "JetBrains Mono";
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/* Each module */
+#battery,
+#clock,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#language,
+#bluetooth {
+/*    padding-left: 0.3em;
+    padding-right: 0.3em;*/
+    padding: 0.6em 0.8em;
+}
+
+/* Each module that should blink */
+#memory,
+#mode,
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Each critical module */
+#memory.critical,
+#battery.critical {
+    color: @red;
+}
+
+/* Each critical that should blink */
+#memory.critical,
+#mode,
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 1s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#battery.warning {
+    background: @bg;
+    color: @orange;
+}
+
+/* Each warning that should blink */
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 2s;
+}
+
+#custom-arrow1 {
+    font-size: 2em;
+    color: @bg;
+    background: @bluetint;
+}
+#custom-arrow2 {
+    font-size: 2em;
+    color: @bluetint;
+    background: @font_dark_alternative;
+}
+#custom-arrow3 {
+    font-size: 2em;
+    color: @font_dark_alternative;
+    background: @bg;
+}
+#custom-arrow4 {
+    font-size: 2.1em;
+    color: @font_gruv_normal;
+    background: @bg;
+}
+#custom-arrow5 {
+    font-size: 2.12em;
+    color: @font_gruv_normal;
+    background: @bg;
+}
+#custom-arrow6 {
+    font-size: 2em;
+    color: @font_dark_alternative;
+    background: @bg;
+}
+#custom-arrow7 {
+    font-size: 2em;
+    color: @bluetint;
+    background: @font_dark_alternative;
+}
+#custom-arrow8 {
+    font-size: 2em;
+    color: @bg;
+    background: @bluetint;
+}
+
+/* And now modules themselves in their respective order */
+#clock {
+    background: @bg;
+    color: @magenta;
+}
+
+#language {
+    background: @bg;
+    color: @green;
+}
+
+/* Workspaces stuff */
+#workspaces {
+}
+#workspaces button {
+    background: @bg;
+    padding: 0em 1.2em;
+    color: @fg;
+    min-width: 0em;
+}
+#workspaces button.focused {
+    font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
+	background: @bg-alt;
+	color: @orange;
+}
+#workspaces button.urgent {
+    color: @fg;
+	background: @red;
+    opacity: 1;
+}
+#pulseaudio {
+    background: @bg;
+    color: @fg;
+}
+#pulseaudio.muted {
+    color: @red;
+}
+#pulseaudio.source-muted {
+    /* moved to config */
+}
+#bluetooth {
+    background: @bg;
+    color: @fg;
+}
+#network {
+    background: @bg;
+    color: @green;
+}
+#tray {
+    background: @bg-alt;
+    color: @fg;
+}
+#memory {
+    background: @bg;
+	color: @fg;
+}
+#mode { /* Shown current Sway mode (resize etc.) */
+    color: @fg;
+    background: @red;
+}
+#battery {
+    color: @green;
+}
+#battery.discharging {
+	color: @yellow;
+}
+#window {
+    margin-right: 40px;
+    margin-left: 40px;
+    font-weight: normal;
+}

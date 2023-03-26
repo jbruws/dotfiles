@@ -1,0 +1,50 @@
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-right": ["network", "memory", "battery", "pulseaudio", "sway/language", "clock", "tray"],
+	
+	"clock": {
+		"format": "{:%Y-%m-%d %H:%M}"
+	},
+
+	"tray": {
+		"spacing": 10,
+		"icon-size": 20
+	},
+
+	"pulseaudio": {
+		"format": "vol: {volume}%",
+		"on-click-right": "pavucontrol",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"scroll-step": 0.5
+	},
+	
+	"battery": {
+		"interval": 15,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		}
+	},
+
+	"sway/language": {
+		"format": " {shortDescription} ",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+		"tooltip": false
+	},
+
+	"memory": {
+		"format": "RAM: {used}G / {total}G",
+		"tooltip": false
+	},
+
+	"network": {
+		"interface": "wlan0",
+		"format-wifi": "{essid}",
+		"format-ethernet": "Eth On",
+		"format-disconnected": "No Connection",
+		"tooltip-format": "{ipaddr}",
+		"on-click": "nm-connection-editor"
+	}
+}
