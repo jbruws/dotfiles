@@ -5,6 +5,3 @@ setxkbmap -option compose:menu
 killall -q waybar
 waybar
 
-# tray applets
-blueman-applet
-nm-applet --indicator

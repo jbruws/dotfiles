@@ -23,8 +23,8 @@ output * bg /home/van/wp_arch_gruv.jpg fill
 ### Idle configuration
 
 exec swayidle -w \
-         timeout 120 'swaylock -f -c 282828' \
-         timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 300 'swaylock -f -c 282828' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 282828'
 
 ### Input configuration
@@ -201,6 +201,17 @@ for_window [class="^.*"] border pixel 0
 
 # Launching terminals
 exec --no-startup-id swaymsg 'workspace 1; exec $term; exec $term'
+
+# waybar
+exec_always killall -q waybar
+exec_always waybar
+
+# tray applets
+exec_always nm-applet --indicator
+# turns out bluetooth earbuds don't work
+# unless you connect them right after sway starts up
+# this is scuffed.
+exec_always blueman-applet
 
 include /etc/sway/config.d/*
 
