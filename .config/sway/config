@@ -186,7 +186,7 @@ bindsym Print exec grim -g "$(slurp)" "/home/van/Screenshots/$(date +'%Y-%m-%d_%
 # russian and english keyboard layout
 input * {
 	xkb_layout "us,ru"
-	xkb_options "grp:alt_shift_toggle"
+	xkb_options "grp:alt_shift_toggle,compose:menu"
 }
 
 # gaps
@@ -203,15 +203,13 @@ for_window [class="^.*"] border pixel 0
 exec --no-startup-id swaymsg 'workspace 1; exec $term; exec $term'
 
 # waybar
-exec_always killall -q waybar
-exec_always waybar
+exec waybar
 
-# tray applets
+
+# tray applets + disk automount
 exec_always nm-applet --indicator
-# turns out bluetooth earbuds don't work
-# unless you connect them right after sway starts up
-# this is scuffed.
 exec_always blueman-applet
+exec_always udiskie
 
 include /etc/sway/config.d/*
 
