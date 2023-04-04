@@ -180,6 +180,17 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# waybar
+bar {
+	position top
+	swaybar_command waybar
+}
+
+# tray applets
+exec_always "nm-applet --indicator"
+exec_always "blueman-applet"
+exec_always "udiskie"
+
 # screenshot
 bindsym Print exec grim -g "$(slurp)" "/home/van/Screenshots/$(date +'%Y-%m-%d_%H:%M:%S')_grim.png"
 
@@ -200,17 +211,11 @@ workspace 2 gaps inner 0
 for_window [class="^.*"] border pixel 0
 
 # Launching terminals
-exec --no-startup-id swaymsg 'workspace 1; exec $term; exec $term'
-
-# waybar
-exec waybar
-
-
-# tray applets + disk automount
-exec_always nm-applet --indicator
-exec_always blueman-applet
-exec_always udiskie
+workspace 1 
+exec $term
+exec $term
 
 include /etc/sway/config.d/*
 
+# Rest is handled by startup script
 exec ~/scripts/startup.sh

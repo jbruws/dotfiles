@@ -36,7 +36,8 @@
 
 	"memory": {
 		"format": "RAM: {used}G / {total}G",
-		"tooltip": false
+		"tooltip": false,
+		"interval": 5
 	},
 
 	"network": {

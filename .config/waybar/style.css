@@ -57,7 +57,7 @@
 
 /* The whole bar */
 #waybar {
-    background: @bg;
+    background: @bg-alt;
     color: @fg;
     font-family: "JetBrains Mono";
     font-size: 10pt;
@@ -106,7 +106,7 @@
 #network.disconnected,
 #memory.warning,
 #battery.warning {
-    background: @bg;
+    background: @bg-alt;
     color: @orange;
 }
 
@@ -159,12 +159,12 @@
 
 /* And now modules themselves in their respective order */
 #clock {
-    background: @bg;
+    background: @bg-alt;
     color: @magenta;
 }
 
 #language {
-    background: @bg;
+    background: @bg-alt;
     color: @green;
 }
 
@@ -172,14 +172,14 @@
 #workspaces {
 }
 #workspaces button {
-    background: @bg;
+    background: @bg-alt;
     padding: 0em 1.2em;
     color: @fg;
     min-width: 0em;
 }
 #workspaces button.focused {
     font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
-	background: @bg-alt;
+	background: @bg;
 	color: @orange;
 }
 #workspaces button.urgent {
@@ -188,7 +188,7 @@
     opacity: 1;
 }
 #pulseaudio {
-    background: @bg;
+    background: @bg-alt;
     color: @fg;
 }
 #pulseaudio.muted {
@@ -198,19 +198,19 @@
     /* moved to config */
 }
 #bluetooth {
-    background: @bg;
-    color: @fg;
-}
-#network {
-    background: @bg;
-    color: @green;
-}
-#tray {
     background: @bg-alt;
     color: @fg;
 }
-#memory {
+#network {
+    /*background: @bg;*/
+    color: @green;
+}
+#tray {
     background: @bg;
+    color: @fg;
+}
+#memory {
+    background: @bg-alt;
 	color: @fg;
 }
 #mode { /* Shown current Sway mode (resize etc.) */
