@@ -5,7 +5,7 @@
 
 @keyframes blink-warning {
     70% {
-		background-color: @bg;
+		background-color: @bg-alt;
     }
 
     to {
@@ -15,7 +15,7 @@
 
 @keyframes blink-critical {
     70% {
-	  background-color: @bg;
+	  background-color: @bg-alt;
     }
 
     to {

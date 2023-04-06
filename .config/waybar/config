@@ -17,7 +17,7 @@
 		"format": "vol: {volume}%",
 		"on-click-right": "pavucontrol",
 		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"scroll-step": 0.5
+		"scroll-step": 1
 	},
 	
 	"battery": {
