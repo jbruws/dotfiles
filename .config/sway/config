@@ -215,6 +215,9 @@ workspace 1
 exec $term
 exec $term
 
+# adjusting screen temp
+exec_always gammastep -P -O 5000
+
 include /etc/sway/config.d/*
 
 # Rest is handled by startup script
