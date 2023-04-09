@@ -15,16 +15,16 @@
 
 	"pulseaudio": {
 		"format": "vol: {volume}%",
-		"on-click-right": "pavucontrol",
-		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click": "pavucontrol",
+		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1
 	},
 	
 	"battery": {
-		"interval": 15,
+		"interval": 5,
 		"states": {
-			"warning": 30,
-			"critical": 15
+			"warning": 35,
+			"critical": 20
 		}
 	},
 
