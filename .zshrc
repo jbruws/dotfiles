@@ -18,6 +18,6 @@ SAVEHIST=1000
 
 # aliases
 alias sudo="doas"
-alias vim="nvim"
+alias vim="nvim -u NONE"
 alias ls="ls --color=always"
 alias screenlock="swaylock -c 282828"

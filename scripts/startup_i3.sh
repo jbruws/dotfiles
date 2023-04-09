@@ -8,7 +8,7 @@ setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle
 redshift -P -O 4500K
 
 # Picom for transparency
-# Actually, turned it off. 
+# Actually, turned it off.
 # Looks unbearable with context menus
 #picom --daemon
 
