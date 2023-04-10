@@ -2,10 +2,12 @@
 	"layer": "top",
 	"position": "top",
 	"modules-left": ["sway/workspaces", "sway/mode"],
-	"modules-right": ["network", "memory", "battery", "pulseaudio", "sway/language", "clock", "tray"],
+	"modules-right": ["network", "memory", "battery", "pulseaudio", "sway/language", "clock"],
+	"modules-center": ["tray"],
 	
 	"clock": {
-		"format": "{:%Y-%m-%d %H:%M}"
+		"format": "{:%H:%M}",
+		"tooltip-format": "{:%Y-%m-%d }"
 	},
 
 	"tray": {
