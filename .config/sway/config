@@ -26,12 +26,6 @@ exec swayidle -w \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 282828'
 
-### Input configuration
-input type:touchpad {
-    tap enabled
-    #natural_scroll enabled
-}
-
 ### Key bindings
 #
 # Basics:
@@ -195,11 +189,12 @@ input * {
 gaps inner 5
 gaps outer 0
 for_window [class="waybar"] gaps outer current set 5
-# i use ws2 for firefox
-workspace 2 gaps inner 0
 
 # no window borders
 for_window [class="^.*"] border pixel 0
+
+# i use ws2 for firefox
+workspace 2 gaps inner 0
 
 # Firefox dialog window fix
 for_window [instance="firefox" class="firefox"] resize set 1100 700
