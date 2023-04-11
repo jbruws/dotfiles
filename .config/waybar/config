@@ -7,7 +7,7 @@
 	
 	"clock": {
 		"format": "{:%H:%M}",
-		"tooltip-format": "{:%Y-%m-%d }"
+		"tooltip-format": "{:%Y-%m-%d}"
 	},
 
 	"tray": {

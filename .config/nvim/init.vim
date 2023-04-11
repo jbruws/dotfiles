@@ -21,7 +21,8 @@ set noswapfile
 
 " Colorscheme
 
-"set background=dark
+set background=dark
+autocmd VimEnter * hi Normal ctermbg=none
 colorscheme gruvbox
 
 " Filetypes
