@@ -18,6 +18,7 @@ SAVEHIST=1000
 
 # aliases
 alias sudo="doas"
-alias vim="nvim -u NONE"
+alias vim="nvim"
 alias ls="ls --color=always"
-alias screenlock="swaylock -c 282828"
+alias lockscreen="swaylock -c 282828"
+alias cat="bat"
