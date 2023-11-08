@@ -20,6 +20,9 @@ set $menu rofi -show drun -theme gruvbox-dark -font 'JetBrains Mono 10'
 # wallpaper
 output * bg /home/van/wp_arch_gruv.jpg fill
 
+input type:touchpad {
+    dwt disabled
+}
 ### Idle configuration
 exec swayidle -w \
          timeout 300 'swaylock -f -c 282828' \
@@ -163,18 +166,18 @@ mode "resize" {
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
 }
+
 bindsym $mod+r mode "resize"
+
+exec_always "nm-applet --indicator"
+exec_always "blueman-applet"
+exec_always "udiskie"
 
 # waybar
 bar {
 	position top
 	swaybar_command waybar
 }
-
-# tray applets
-exec_always "nm-applet --indicator"
-exec_always "blueman-applet"
-exec_always "udiskie"
 
 # screenshot
 bindsym Print exec grim -g "$(slurp)" "/home/van/Screenshots/$(date +'%Y-%m-%d_%H:%M:%S')_grim.png"
@@ -206,9 +209,9 @@ exec $term
 exec $term
 
 # adjusting screen temp
-exec_always gammastep -P -O 5000
-
-include /etc/sway/config.d/*
+exec_always gammastep -P -l 0:0 -o -b 0.9:0.9 -O 4500
 
 # Rest is handled by startup script
 exec ~/scripts/startup.sh
+
+include /etc/sway/config.d/*
