@@ -3,7 +3,7 @@ export XDG_CURRENT_DESKTOP="sway"
 
 # prompt
 autoload -U colors && colors
-PS1='%B%F{yellow}%n%F{magenta} @ %F{green}%d
+PS1='%B%F{yellow}%n%F{blue} %b@%B%F{magenta} %m %F{blue}%b|%B %F{green}%d
 ->%f%b '
 
 # autostart sway on tty1
