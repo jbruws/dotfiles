@@ -35,6 +35,7 @@ set clipboard=unnamedplus
 call plug#begin('~/.config/nvim/plugged')
 	Plug 'preservim/nerdtree'
 	Plug 'preservim/nerdcommenter'
+	Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 	"Plug 'neovim/nvim-lspconfig'
 	"Plug 'hrsh7th/nvim-cmp'
 	"Plug 'hrsh7th/cmp-nvim-lsp'
