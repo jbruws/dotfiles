@@ -7,7 +7,7 @@ sleep 0.5
 pipewire-pulse &
 wireplumber &
 
-sleep 0.5
+sleep 1.25
 
 waybar &
 sleep 0.5

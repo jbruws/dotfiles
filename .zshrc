@@ -8,7 +8,7 @@ PS1='%B%F{yellow}%n%F{blue} %b@%B%F{magenta} %m %F{blue}%b|%B %F{green}%d
 
 # autostart sway on tty1
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec sway
+  exec dbus-launch --exit-with-session sway
 fi
 
 # history
@@ -21,4 +21,4 @@ alias sudo="doas"
 alias vim="nvim"
 alias ls="ls --color=always"
 alias lockscreen="swaylock -c 282828"
-alias cat="bat"
+#alias cat="bat"

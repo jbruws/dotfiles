@@ -25,7 +25,11 @@ url:
     program: firefox
     args: []
 
-window: { opacity: 0.9 }
+window:
+  opacity: 0.9
+  padding:
+    x: 4
+    y: 2
 
 import:
   - ~/.config/alacritty/gruvbox_dark.yaml

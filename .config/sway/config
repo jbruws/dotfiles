@@ -17,18 +17,6 @@ set $menu rofi -show drun -theme gruvbox-dark -font 'JetBrains Mono 10'
 
 ### Output configuration
 
-# wallpaper
-output * bg /home/van/wp.jpg fill
-
-input type:touchpad {
-    dwt disabled
-}
-### Idle configuration
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 282828' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 282828'
-
 ### Key bindings
 #
 # Basics:
@@ -168,6 +156,22 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# wallpaper
+output * bg /home/van/wp.jpg fill
+
+input type:touchpad {
+    dwt disabled
+	tap enabled
+	scroll_factor 1.25
+	pointer_accel 0.2
+	middle_emulation enabled
+}
+### Idle configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 282828' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 282828'
 
 # screenshot
 bindsym Print exec grim -g "$(slurp)" "/home/van/Screenshots/$(date +'%Y-%m-%d_%H:%M:%S')_grim.png"
