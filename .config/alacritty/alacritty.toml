@@ -1,0 +1,33 @@
+import = ["/home/van/.config/alacritty/gruvbox_dark.toml"]
+
+[font]
+size = 11
+
+[cursor]
+style = "Beam"
+
+[font.bold]
+family = "JetBrainsMono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono"
+style = "Regular"
+
+#[url.launcher]
+#program = "firefox"
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 4
+y = 2
