@@ -163,7 +163,7 @@ output * bg /home/van/wp.jpg fill
 input type:touchpad {
     dwt disabled
 	tap enabled
-	scroll_factor 1.25
+	scroll_factor 1.0
 	pointer_accel 0.2
 	middle_emulation enabled
 }
@@ -175,6 +175,9 @@ exec swayidle -w \
 
 # screenshot
 bindsym Print exec grim -g "$(slurp)" "/home/van/Screenshots/$(date +'%Y-%m-%d_%H:%M:%S')_grim.png"
+
+# screenshot to clipboard
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy --type image/png
 
 # russian and english keyboard layout
 input * {
