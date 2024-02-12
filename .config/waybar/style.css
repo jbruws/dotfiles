@@ -118,8 +118,10 @@
 /* Workspaces stuff */
 #workspaces button {
     background: @bg-alt;
-    padding: 0em 0.3em;
-	margin: 0.2em;
+    margin: 1em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    margin: 0.2em;
     color: @fg;
 }
 #workspaces button.focused {
@@ -127,7 +129,7 @@
 	background: @bg;
 	color: @orange;
 	margin: 0.4em;
-	border-radius: 2em;
+	border-radius: 0.5em;
 }
 #workspaces button.urgent {
     color: @fg;

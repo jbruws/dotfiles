@@ -200,6 +200,10 @@ workspace 2 gaps inner 0
 for_window [instance="firefox" class="firefox"] resize set 1100 700
 for_window [instance="firefox" class="firefox"] move position center
 
+# removing nonexistent outputs
+exec_always wlr-randr --output VGA-1 --off
+exec_always wlr-randr --output VGA-2 --off
+
 # Launching terminals
 workspace 1 
 exec $term
