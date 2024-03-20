@@ -185,6 +185,9 @@ input * {
 	xkb_options "grp:alt_shift_toggle,compose:menu"
 }
 
+# screen lock
+bindsym $mod+q exec "swaylock -c 282828"
+
 # gaps
 gaps inner 5
 gaps outer 0
