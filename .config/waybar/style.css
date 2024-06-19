@@ -5,26 +5,12 @@
 	https://github.com/Befrimon/dotfiles
 */
 
-/* COLORS - Gruvbox Dark */
-/* basic colors (from alacritty theme and polybar config) */
-@define-color black #282828;
-@define-color red #cc241d;
-@define-color green #98971a;
-@define-color yellow #d79921;
-@define-color orange #fe8019;
-@define-color blue #458588;
-@define-color magenta #b16286;
-@define-color cyan #689d6a;
-@define-color white #a89984;
-
-@define-color bg #282828;
-@define-color bg-alt #3c3836;
-@define-color fg #fbf1c7;
+@import "mocha.css";
 
 /* ANIMATIONS */
 @keyframes blink-warning {
     50% {
-		background-color: @bg;
+		background-color: @base;
     }
 
     to {
@@ -34,7 +20,7 @@
 
 @keyframes blink-critical {
     50% {
-	  background-color: @bg;
+	  background-color: @base;
     }
 
     to {
@@ -52,11 +38,14 @@
 
 /* The whole bar */
 #waybar {
-    background: @bg-alt;
-    color: @fg;
+    background: @mantle;
+    color: @text;
     font-family: "JetBrains Mono";
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: bold;
+	border: 1px solid @teal;
+	border-radius: 0.5rem;
+	opacity: 0.9;
 }
 
 /* Settings applied to every module */
@@ -66,18 +55,18 @@
 #network,
 #pulseaudio,
 #tray,
-#mode,
+#submap,
 #language {
     margin: 0.4em;
 	border-radius: 0.5em;
     padding: 0.4em 0.8em;
-	background-color: @bg;
-	color: @fg;
+	background-color: @base;
+	color: @text;
 }
 
 /* Each module that should blink */
 #memory,
-#mode,
+#submap,
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -92,7 +81,6 @@
 
 /* Each critical that should blink */
 #memory.critical,
-#mode,
 #battery.critical.discharging {
     animation-name: blink-critical;
     animation-duration: 0.5s;
@@ -102,7 +90,7 @@
 #network.disconnected,
 #memory.warning,
 #battery.warning {
-    background: @bg;
+    background: @base;
     color: @orange;
 }
 
@@ -112,33 +100,43 @@
     animation-duration: 2s;
 }
 
-
 /* And now modules themselves in their respective order */
 
 /* Workspaces stuff */
-#workspaces button {
-    background: @bg-alt;
-    margin: 1em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-    margin: 0.2em;
-    color: @fg;
+#workspaces {
+	margin-left: 0.2em;
 }
-#workspaces button.focused {
-    font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
-	background: @bg;
-	color: @orange;
-	margin: 0.4em;
+#workspaces button {
+    background: @mantle;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 	border-radius: 0.5em;
+    /*padding-left: 1em;*/
+    /*padding-right: 1em;*/
+    color: @text;
+}
+#workspaces button.active {
+    font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
+	background: @base;
+	color: @sky;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 #workspaces button.urgent {
-    color: @fg;
-	background: @red;
+    color: @text;
+    background: @red;
     opacity: 1;
+}
+#workspaces button:not(.urgent):hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background-color: @base;
 }
 
 #clock {
-    color: @magenta;
+    color: @flamingo;
 }
 
 #language {
@@ -146,7 +144,7 @@
 }
 
 #pulseaudio {
-    color: @fg;
+    color: @text;
 }
 #pulseaudio.muted {
     color: @red;
@@ -169,7 +167,8 @@
     color: @green;
 }
 
-#mode { /* Shown current Sway mode (resize etc.) */
-    color: @fg;
-    background: @red;
+#submap { /* Shown current Hyprland submap (resize etc.) */
+    color: @text;
+	padding: 5px;
+	background-color: @base;
 }

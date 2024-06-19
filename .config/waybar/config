@@ -1,9 +1,18 @@
 {
 	"layer": "top",
 	"position": "top",
-	"modules-left": ["sway/workspaces", "sway/mode"],
-	"modules-right": ["network", "memory", "battery", "pulseaudio", "sway/language", "clock"],
+	"height": 40,
+	"margin-top": 5,
+	"margin-left": 5,
+	"margin-right": 5,
+	"modules-left": ["hyprland/workspaces", "hyprland/submap"],
+	"modules-right": ["network", "memory", "battery", "pulseaudio", "hyprland/language", "clock"],
 	"modules-center": ["tray"],
+
+	"hyprland/workspaces": {
+		"show-special": true,
+		"special-visible-only": true
+	},
 	
 	"clock": {
 		"format": "{:%H:%M}",
@@ -32,7 +41,7 @@
 		"format": "vol: {volume}%",
 		"on-click": "pavucontrol",
 		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"scroll-step": 1
+		"scroll-step": 0.5
 	},
 	
 	"battery": {
@@ -43,9 +52,9 @@
 		}
 	},
 
-	"sway/language": {
+	"hyprland/language": {
 		"format": " {shortDescription} ",
-		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+		"on-click": "hyprlandmsg input type:keyboard xkb_switch_layout next",
 		"tooltip": false
 	},
 

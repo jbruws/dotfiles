@@ -23,7 +23,7 @@ vim.cmd("filetype plugin indent on")
 -- Colorscheme
 vim.opt.background = "dark"
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=none")
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme catppuccin_mocha")
 
 -- History
 vim.opt.history = 500

@@ -1,14 +1,17 @@
-# setting WM as sway
-export XDG_CURRENT_DESKTOP="sway"
-
 # prompt
 autoload -U colors && colors
 PS1='%B%F{yellow}%n%F{blue} %b@%B%F{magenta} %m %F{blue}%b|%B %F{green}%d
 ->%f%b '
 
-# autostart sway on tty1
+# autostart hyprland on tty1
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec dbus-launch --exit-with-session sway
+	# setting WM as hyprland
+	export XDG_CURRENT_DESKTOP="Hyprland"
+	export XDG_RUNTIME_DIR="/run/user/1000"
+	ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
+
+	# starting the WM
+	exec dbus-launch --exit-with-session Hyprland
 fi
 
 # history
@@ -20,4 +23,4 @@ SAVEHIST=1000
 alias sudo="doas"
 alias vim="nvim"
 alias ls="ls --color=always"
-alias lockscreen="swaylock -c 282828"
+alias lockscreen="swaylock -c 181825"
